@@ -1,24 +1,22 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(AudioSource))]
 public class StickyBomb : MonoBehaviour
 {
     [SerializeField] private GameObject explosionEffect;
     [SerializeField] private AudioClip explosionSound;
+    [SerializeField] private float explosionVolume = 1.0f;
+
     [SerializeField] private float explosionForce = 10.0f;
     [SerializeField] private float explosionRadius = 10.0f;
     [SerializeField] private float explosionDelay = 1.5f;
     [SerializeField] private float explosionUpwardForce = 1.0f;
 
-    private AudioSource source;
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        source = GetComponent<AudioSource>();
-
         rb.isKinematic = false;
     }
 
@@ -26,8 +24,8 @@ public class StickyBomb : MonoBehaviour
     {
         Debug.Log("Exploded!");
 
-        source.PlayOneShot(explosionSound);
-        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        var effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        effect.AddComponent<AudioSource>().PlayOneShot(explosionSound, explosionVolume);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider hit in colliders)
