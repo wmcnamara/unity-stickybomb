@@ -2,7 +2,7 @@
 
 A simple stickybomb script that applies explosion force to nearby rigidbodies, and will play effects/sounds.
 
-Works for Unity, works with single script, and is highly customizable.
+Contained in a single script/prefab, and is highly customizable.
 
 # Example
 
