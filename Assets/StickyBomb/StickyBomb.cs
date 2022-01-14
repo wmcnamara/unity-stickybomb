@@ -3,18 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class StickyBomb : MonoBehaviour
 {
-    [Header("FX")]
-
-    [Tooltip("Optional explosion effect that will be spawned on the bomb on detonation. Leave empty for no effect.")]
-    [SerializeField] private GameObject explosionEffect;
-
-    [Tooltip("Optional explosion audio clip that will be played when the bomb detonates. Leave empty for no sound.")]
-    [SerializeField] private AudioClip explosionSound;
-
-    [Tooltip("The volume scale of the explosion sound")]
-    [SerializeField] [Range(0.0f, 1.0f)] private float explosionVolume = 1.0f;
-
-
 
     [Header("Explosion Config")]
 
@@ -29,6 +17,19 @@ public class StickyBomb : MonoBehaviour
 
     [Tooltip("Adjustment to the apparent position of the explosion to make it seem to lift objects.")]
     [SerializeField] private float explosionUpwardForce = 1.0f;
+
+
+    [Header("FX")]
+
+    [Tooltip("Optional explosion effect that will be spawned on the bomb on detonation. Leave empty for no effect.")]
+    [SerializeField] private GameObject explosionEffect;
+
+    [Tooltip("Optional explosion audio clip that will be played when the bomb detonates. Leave empty for no sound.")]
+    [SerializeField] private AudioClip explosionSound;
+
+    [Tooltip("The volume scale of the explosion sound")]
+    [SerializeField] [Range(0.0f, 1.0f)] private float explosionVolume = 1.0f;
+
 
     private Rigidbody rb;
 
