@@ -9,6 +9,11 @@ Contained in a single script/prefab, and is highly customizable.
 ![StickyBomb Showcase](StickybombShowcase.gif)
 (if you see weird checkerboarding on the gif, its because of video compression)
 
+# Using The Stickybomb
+If you just want to use the stickybomb, copy the `Assets/Stickybomb` folder into your project.
+
+It contains a prefab, the Stickybomb.cs file, some materials, a particle effect and a sound.
+
 ## What you should know
 
 By itself, the sticky bomb will:
@@ -19,8 +24,9 @@ By itself, the sticky bomb will:
 You should add your own logic for throwing moving the stickybomb, and spawning it.
 
 ## Keep in mind:
- - To attach to an object, it must have a collider.
+ - To attach to an object, the object it should attach to must have a collider.
  - To be effected by explosions from the stickybomb, an object must have a collider and rigidbody.
-
+ - The stickybomb object needs a rigidbody and collider to operate.
+ 
 Feel free to open an issue if you have any questions.
 
