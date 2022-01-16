@@ -27,6 +27,7 @@ You should add your own logic for throwing moving the stickybomb, and spawning i
  - To attach to an object, the object it should attach to must have a collider.
  - To be effected by explosions from the stickybomb, an object must have a collider and rigidbody.
  - The stickybomb object needs a rigidbody and collider to operate.
+ - The sound will only play if an explosion effect is also configured.
  
 Feel free to open an issue if you have any questions.
 
