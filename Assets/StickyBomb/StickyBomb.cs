@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class StickyBomb : MonoBehaviour
 {
-
     [Header("Explosion Config")]
 
     [Tooltip("The force of the explosion (which may be modified by distance).")]
@@ -87,6 +86,8 @@ public class StickyBomb : MonoBehaviour
         Disables the physics movement of the bomb, and prevents it from sticking/exploding on objects. 
 
         Useful if your player needs to carry the bomb around before throwing it, for example.
+
+        To reenable physics and sticking, Call .EnablePhysics()
     */
     public void DisablePhysics()
     {
