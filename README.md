@@ -23,6 +23,13 @@ By itself, the sticky bomb will:
 
 You should add your own logic for throwing moving the stickybomb, and spawning it.
 
+If you want to disable the stickybomb sticking to anything/exploding, and falling down, call `.DisablePhysics()`.
+You can call `.EnablePhysics()` to reactivate the stickybomb.
+
+When deactivated, the stickybomb will not stick to anything, and will not have gravity. This is useful if your player needs to carry the stickybomb around before throwing it, for example.
+
+Disabling the stickybomb effectively just makes the rigidbody attached to the bomb kinematic.
+
 ## Keep in mind:
  - To attach to an object, the object it should attach to must have a collider.
  - To be effected by explosions from the stickybomb, an object must have a collider and rigidbody.
