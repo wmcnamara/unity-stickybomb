@@ -21,7 +21,7 @@ By itself, the sticky bomb will:
 1. When spawned, will move based on physics (fall based on gravity)
 2. Attach to the first object it hits, and then explode 1 second later
 
-You should add your own logic for throwing moving the stickybomb, and spawning it.
+You should add your own logic for throwing/moving the stickybomb, and spawning it.
 
 ## Keep in mind:
  - To attach to an object, the object it should attach to must have a collider.
