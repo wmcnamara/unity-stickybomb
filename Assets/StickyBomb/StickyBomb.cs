@@ -30,13 +30,16 @@ public class StickyBomb : MonoBehaviour
     [Tooltip("The volume scale of the explosion sound")]
     [SerializeField] [Range(0.0f, 1.0f)] private float explosionVolume = 1.0f;
 
-
     private Rigidbody rb;
+
+    private bool stickingActivated = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
+
+        stickingActivated = true;
     }
 
     public void Explode()
@@ -70,9 +73,33 @@ public class StickyBomb : MonoBehaviour
 
         Destroy(gameObject);
     }
+    
+    /*
+        Enables the physics movement of the bomb, and allows it to stick/explode on objects. 
+    */
+    public void EnablePhysics()
+    {
+        rb.isKinematic = false;
+        stickingActivated = true;
+    }
+
+    /*
+        Disables the physics movement of the bomb, and prevents it from sticking/exploding on objects. 
+
+        Useful if your player needs to carry the bomb around before throwing it, for example.
+    */
+    public void DisablePhysics()
+    {
+        rb.isKinematic = true;
+        stickingActivated = false;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!stickingActivated)
+            return;
+
         rb.isKinematic = true;
 
         Invoke(nameof(Explode), explosionDelay);
